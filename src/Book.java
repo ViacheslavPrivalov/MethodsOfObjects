@@ -15,14 +15,17 @@ public class Book {
 
         return this.bookName;
     }
+
     public Author getAuthor() {
 
         return this.author;
     }
+
     public int getPublishingYear() {
 
         return this.publishingYear;
     }
+
     public void setPublishingYear(int publishingYear) {
 
         this.publishingYear = publishingYear;
@@ -39,7 +42,14 @@ public class Book {
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishingYear);
+
+        return Objects.hash(bookName);
+        // Вопрос: получается hashCode и equals всегда должны указывать на одно поле, чтобы мы могли сравнить объекты?
+    }
+
+    @Override
+    public String toString() {
+        return "Книга: " + "\"" + this.bookName + "\"" + ", " + this.author + ", " + this.publishingYear;
     }
 }
 
