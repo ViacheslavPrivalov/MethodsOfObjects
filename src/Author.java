@@ -24,21 +24,21 @@ public class Author {
 
         return this.firstName + " " + this.lastName;
     }
+
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
         Author author = (Author) other;
-        return Objects.equals(lastName, author.lastName);
-        //Вопрос: если я хочу сравнивать не только по фамилии, но и по имени,
-        // надо ещё один метод equals создавать?
-        // И какие тогда поля на вход подавать?
+        return Objects.equals(lastName, author.lastName) && Objects.equals(firstName, author.firstName);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(lastName);
+
+        return Objects.hash(lastName, firstName);
     }
 
 }

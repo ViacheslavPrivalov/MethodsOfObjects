@@ -33,7 +33,7 @@ public class Book {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
         Book book = (Book) other;
@@ -44,7 +44,6 @@ public class Book {
     public int hashCode() {
 
         return Objects.hash(bookName);
-        // Вопрос: получается hashCode и equals всегда должны указывать на одно поле, чтобы мы могли сравнить объекты?
     }
 
     @Override

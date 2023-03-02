@@ -9,7 +9,6 @@ public class Main {
         System.out.println(theCherryGarden);
         System.out.println();
         System.out.println("Автор: " + harryPotter.getAuthor());
-        // я правильно понимаю, что метод toString используется по умолчанию, и вызывать его не нужно?
         System.out.println(harryPotter.toString());
         System.out.println();
         System.out.println("theCherryGarden.hashCode() = " + theCherryGarden.hashCode());
